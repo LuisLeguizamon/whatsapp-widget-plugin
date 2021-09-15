@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WhatsApp Floating Button
- * Plugin URI: https://www.zentcode.com
+ * Plugin URI: http://www.zentcode.com
  * Description: WhatsApp Floating Action Button
  * Version: 1.0
  * Author: Zentcode
@@ -74,6 +74,9 @@ class WhatsApp_Button_Widget extends WP_Widget {
 			echo'<p>';
 			if ( $text & $phonenumber) {
 				echo'<a href="https://api.whatsapp.com/send?phone=' . $phonenumber . '&amp;text=' . $text . '">';
+			}
+			elseif ( $phonenumber ) { //phonenumber without text
+				echo'<a href="https://api.whatsapp.com/send?phone=' . $phonenumber . '&amp;">';
 			}
 			else {
 				echo'<a>';
