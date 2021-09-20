@@ -81,11 +81,12 @@ class WhatsApp_Button_Widget extends WP_Widget {
 			else {
 				echo'<a>';
 			}
-			echo'<i style="font-size:25px;box-shadow:0px 0px 10px 0px rgb(0 0 0 / 50%);position:fixed;bottom:0;right:35px;padding:13px 16px;background:#179e0d;border-radius:50px;margin-bottom:40px;margin-top:10px;display:block;cursor:pointer;color:#fff;z-index:9999;" class="fa fa-whatsapp"></i>';
+			echo'<i class="custom-whatsapp fa fa-whatsapp"></i>';
 			echo'</a>';
 			echo'</p>';
 
-		echo '</div>';
+		echo '</div>'
+		;
 
 		// WordPress core after_widget hook (always include )
 		echo $after_widget;
@@ -99,3 +100,13 @@ function my_register_custom_widget() {
 	register_widget( 'WhatsApp_Button_Widget' );
 }
 add_action( 'widgets_init', 'my_register_custom_widget' );
+
+add_action('wp_enqueue_scripts', 'callback_for_setting_up_scripts');
+function callback_for_setting_up_scripts() {
+    wp_register_style( 'custom-whatsapp',
+						plugin_dir_url( __FILE__ ).'css/custom.css',
+						array(),
+						'1.0'
+					);
+    wp_enqueue_style( 'custom-whatsapp' );
+}
