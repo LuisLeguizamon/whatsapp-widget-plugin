@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: WhatsApp Floating Button
+ * Plugin Name: Floating Chat Button
  * Plugin URI: http://www.zentcode.com
- * Description: WhatsApp Floating Action Button
+ * Description: Floating Action Button to open WhatsApp
  * Version: 1.0
  * Author: Zentcode
  * Author URI: https://www.zentcode.com
