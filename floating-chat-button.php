@@ -3,18 +3,18 @@
  * Plugin Name: Floating Chat Button
  * Plugin URI: http://www.zentcode.com
  * Description: Floating Action Button to open WhatsApp
- * Version: 1.0
+ * Version: 1.0.0
  * Author: Zentcode
  * Author URI: https://www.zentcode.com
  */
 // The widget class
-class WhatsApp_Button_Widget extends WP_Widget {
+class Floating_Chat_Button extends WP_Widget {
 
 	// Main constructor
 	public function __construct() {
 		parent::__construct(
-			'whatsapp_button_widget',
-			__( 'WhatsApp Button Widget', 'text_domain' ),
+			'floating_chat_button',
+			__( 'Floating Chat Button Widget', 'text_domain' ),
 			array(
 				'customize_selective_refresh' => true,
 			)
@@ -97,7 +97,7 @@ class WhatsApp_Button_Widget extends WP_Widget {
 
 // Register the widget
 function my_register_custom_widget() {
-	register_widget( 'WhatsApp_Button_Widget' );
+	register_widget( 'Floating_Chat_Button' );
 }
 add_action( 'widgets_init', 'my_register_custom_widget' );
 
