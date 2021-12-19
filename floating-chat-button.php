@@ -63,7 +63,7 @@ class Floating_Chat_Button extends WP_Widget {
 		// Check the widget options
 		$text     = isset( $instance['text'] ) ? $instance['text'] : '';
 		$phonenumber     = isset( $instance['phonenumber'] ) ? $instance['phonenumber'] : '';
-
+		$url = '';//default value
 		// WordPress core before_widget hook (always include )
 		echo $before_widget;
 
@@ -73,14 +73,12 @@ class Floating_Chat_Button extends WP_Widget {
 			// Display text field
 			echo'<p>';
 			if ( $text & $phonenumber) {
-				echo'<a href="https://api.whatsapp.com/send?phone=' . $phonenumber . '&amp;text=' . $text . '">';
+				$url = "https://api.whatsapp.com/send?phone=".$phonenumber."&amp;text=".$text;
 			}
 			elseif ( $phonenumber ) { //phonenumber without text
-				echo'<a href="https://api.whatsapp.com/send?phone=' . $phonenumber . '&amp;">';
+				$url = "https://api.whatsapp.com/send?phone=".$phonenumber."";
 			}
-			else {
-				echo'<a>';
-			}
+			echo'<a href="'.$url.'">';
 			echo'<i class="custom-whatsapp fa fa-whatsapp"></i>';
 			echo'</a>';
 			echo'</p>';
