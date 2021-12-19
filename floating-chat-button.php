@@ -78,7 +78,7 @@ class Floating_Chat_Button extends WP_Widget {
 			elseif ( $phonenumber ) { //phonenumber without text
 				$url = "https://api.whatsapp.com/send?phone=".$phonenumber."";
 			}
-			echo'<a href="'.$url.'">';
+			echo'<a href="'.esc_url( $url ).'">';
 			echo'<i class="custom-whatsapp fa fa-whatsapp"></i>';
 			echo'</a>';
 			echo'</p>';
