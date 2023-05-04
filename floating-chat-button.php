@@ -3,7 +3,7 @@
  * Plugin Name: Floating Chat Button
  * Plugin URI: http://www.zentcode.com
  * Description: Floating Action Button to open WhatsApp
- * Version: 1.0.0
+ * Version: 1.2.0
  * Author: Zentcode
  * Author URI: https://www.zentcode.com
  */
@@ -73,10 +73,10 @@ class Floating_Chat_Button extends WP_Widget {
 			// Display text field
 			echo'<p>';
 			if ( $text & $phonenumber) {
-				$url = "https://api.whatsapp.com/send?phone=".$phonenumber."&amp;text=".$text;
+				$url = "https://wa.me/".$phonenumber."&amp;text=".$text;
 			}
 			elseif ( $phonenumber ) { //phonenumber without text
-				$url = "https://api.whatsapp.com/send?phone=".$phonenumber."";
+				$url = "https://wa.me/".$phonenumber."";
 			}
 			echo'<a href="'.esc_url( $url ).'">';
 			echo'<i class="custom-whatsapp fa fa-whatsapp"></i>';
