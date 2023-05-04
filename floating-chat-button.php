@@ -10,6 +10,8 @@
 // The widget class
 class Floating_Chat_Button extends WP_Widget {
 
+	private $baseURL = 'https://wa.me/';
+
 	// Main constructor
 	public function __construct() {
 		parent::__construct(
@@ -73,10 +75,10 @@ class Floating_Chat_Button extends WP_Widget {
 			// Display text field
 			echo'<p>';
 			if ( $text & $phonenumber) {
-				$url = "https://wa.me/".$phonenumber."&amp;text=".$text;
+				$url = $this->baseURL.$phonenumber."&amp;text=".$text;
 			}
 			elseif ( $phonenumber ) { //phonenumber without text
-				$url = "https://wa.me/".$phonenumber."";
+				$url = $this->baseURL.$phonenumber."";
 			}
 			echo'<a href="'.esc_url( $url ).'">';
 			echo'<i class="custom-whatsapp fa fa-whatsapp"></i>';
