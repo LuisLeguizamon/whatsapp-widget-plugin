@@ -67,7 +67,7 @@ public function widget( $args, $instance ) {
         // Display text field
         echo'<p>';
         if ( $text & $phonenumber) {
-            $url = $this->baseURL.$phonenumber."&amp;text=".$text;
+            $url = $this->baseURL.$phonenumber."/?text=".$text;
         }
         elseif ( $phonenumber ) { //phonenumber without text
             $url = $this->baseURL.$phonenumber."";
